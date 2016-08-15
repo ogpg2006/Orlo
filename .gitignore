@@ -1,0 +1,1125 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
+import java.lang.Math.*;
+import javax.swing.JOptionPane;
+
+public class gato2 extends Applet implements ActionListener{
+ private Button un, deux, trois, quatre , cinq, six, sept, huit, neuf, AC,start;
+ private int uno = 0, dos = 0, tres = 0, cuatro = 0, cinco =0, seis =0, siete =0, ocho=0, nueve=0,ac=0,inic=0, um=0, dois=0,três=0, quatro=0, cinco5=0, seis6=0, sete=0, oito=0, nove=0;
+ public Panel a1,b1,c1,start1;
+ private int turno=0,jug1=0,jug2=0,jug3=0;
+
+ public void init (){
+
+ setLayout(new FlowLayout());
+ a1 = new Panel (new GridLayout (3,3));
+ b1 = new Panel (new GridLayout (1,1));
+ start1= new Panel (new GridLayout(1,1));
+
+ start= new Button("Inicio");start.setBackground(Color.green);start.setForeground(Color.WHITE);
+ un= new Button("1");un.setBackground(Color.BLACK);un.setForeground(Color.WHITE);
+ deux = new Button("2");deux.setBackground(Color.BLACK);deux.setForeground(Color.WHITE);
+ trois = new Button("3");trois.setBackground(Color.BLACK);trois.setForeground(Color.WHITE);
+ quatre = new Button("4");quatre.setBackground(Color.BLACK);quatre.setForeground(Color.WHITE);
+ cinq = new Button("5");cinq.setBackground(Color.BLACK);cinq.setForeground(Color.WHITE);
+ six = new Button("6");six.setBackground(Color.BLACK);six.setForeground(Color.WHITE);
+ sept = new Button ("7");sept.setBackground(Color.BLACK);sept.setForeground(Color.WHITE);
+ huit = new Button ("8");huit.setBackground(Color.BLACK);huit.setForeground(Color.WHITE);
+ neuf = new Button ("9");neuf.setBackground(Color.BLACK);neuf.setForeground(Color.WHITE);
+ AC = new Button ("AC");AC.setForeground(Color.black);
+
+ add(start1);
+ add(a1);
+ add(b1);
+ start1.add(start);
+ a1.add(un);
+ a1.add(deux);
+ a1.add(trois);
+ a1.add(quatre);
+ a1.add(cinq);
+ a1.add(six);
+ a1.add(sept);
+ a1.add(huit);
+ a1.add(neuf);
+ b1.add(AC);
+
+ start.addActionListener(this);
+ un.addActionListener(this);
+ deux.addActionListener(this);
+ trois.addActionListener(this);
+ quatre.addActionListener(this);
+ cinq.addActionListener(this);
+ six.addActionListener(this);
+ sept.addActionListener(this);
+ huit.addActionListener(this);
+ neuf.addActionListener(this);
+ AC.addActionListener(this);
+
+ }
+
+ public void actionPerformed(ActionEvent e) {
+    Object fuente = e.getSource();
+
+       if(fuente==start){
+       inic=1;
+       }
+
+       if(fuente== deux){
+       dos=2;
+       turno++;
+       }
+
+       if(fuente== trois){
+       tres=3;
+       turno++;
+          }
+
+       if(fuente== quatre){
+       cuatro=4;
+       turno++;
+       }
+
+       if(fuente== cinq){
+       cinco=5;
+       turno++;
+       }
+
+       if(fuente== six){
+       seis=6;
+       turno++;
+       }
+
+       if(fuente== sept){
+       siete=7;
+       turno++;
+       }
+
+       if(fuente== huit){
+       ocho=8;
+       turno++;
+       }
+
+       if(fuente== neuf){
+       nueve=9;
+       turno++;
+       }
+
+       if(fuente== AC){
+        uno = 0;dos = 0;tres = 0;cuatro = 0;cinco =0;seis =0;siete =0;ocho=0;nueve=0;
+        um=0;dois=0;três=0;quatro=0;cinco5=0;seis6=0;sete=0;oito=0;nove=0;
+        turno=0;jug1=0;jug2=0;jug3=0;
+        ac=1;
+        }
+repaint();
+      }
+  public void paint(Graphics g) {
+
+/*botón para borrar*/
+
+         if (ac==1){
+         g.setColor(Color.white);
+         g.fillRect(0,0,900,900);
+         ac=0;
+        }
+/*botones para el jugador*/
+
+        if(dos==2){
+        g.drawOval(275,75,50,50);
+        }
+
+        if(tres==3){
+        g.drawOval(360,75,49,49);
+        }
+
+        if(cuatro==4){
+        g.drawOval(185,160,49,49);
+        }
+
+        if(cinco==5){
+        g.drawOval(275,160,50,50);
+        }
+
+        if(seis==6){
+        g.drawOval(360,160,49,49);
+        }
+
+        if(siete==7){
+        g.drawOval(185,250,49,49);
+        }
+
+        if(ocho==8){
+        g.drawOval(275,250,49,49);
+        }
+
+        if(nueve==9){
+        g.drawOval(360,250,49,49);
+           }
+
+/*botones computadora*/
+
+           if(um==1){
+        g.drawLine(175,75,250,135);
+        g.drawLine(250,75,175,135);
+        }
+
+        if(dois==2){
+        g.drawLine(250,75,350,135);
+        g.drawLine(350,75,250,135);
+           }
+
+        if(três==3){
+        g.drawLine(350,75,425,135);
+        g.drawLine(425,75,350,135);
+           }
+
+           if(quatro==4){
+        g.drawLine(175,135,250,235);
+        g.drawLine(250,135,175,235);
+           }
+
+           if(cinco5==5){
+        g.drawLine(250,135,350,235);
+        g.drawLine(350,135,250,235);
+           }
+
+           if(seis6==6){
+        g.drawLine(350,135,425,235);
+        g.drawLine(425,135,350,235);
+           }
+
+        if(sete==7){
+        g.drawLine(175,235,250,300);
+        g.drawLine(250,235,175,300);
+           }
+
+           if(oito==8){
+        g.drawLine(250,235,350,300);
+        g.drawLine(350,235,250,300);
+           }
+
+           if(nove==9){
+        g.drawLine(350,235,425,300);
+        g.drawLine(425,235,350,300);
+           }
+
+/*líneas del gane*/
+
+/*diagonales*/
+        if((um==1)&&(cinco5==5)&&(nove==9)){
+         g.drawLine(175,75,425,300);
+        }
+
+        if((três==3)&&(cinco5==5)&&(sete==7)){
+         g.drawLine(425,75,175,300);
+        }
+
+/*verticales*/
+        if((um==1)&&(quatro==4)&&(sete==7)){
+         g.drawLine(212,75,212,300);
+        }
+
+        if((três==3)&&(seis6==6)&&(nove==9)){
+         g.drawLine(387,75,387,300);
+        }
+
+/*horizontales*/
+        if((um==1)&&(dois==2)&&(três==3)){
+         g.drawLine(175,105,425,105);
+        }
+
+
+        if((sete==7)&&(oito==8)&&(nove==9)){
+         g.drawLine(175,267,425,267);
+        }
+
+
+/*Juego*/
+       if(inic==1){
+
+/*inicio del juego*/
+        g.drawLine(250,75,250,300);
+        g.drawLine(350,75,350,300);
+        g.drawLine(175,135,425,135);
+        g.drawLine(175,235,425,235);
+/*primera jugada*/
+        um=1;
+        }
+/*desarrollo del juego*/
+
+       if(turno==1){
+         if (dos==2){
+          cinco5=5;
+          jug1=2;
+         }
+        else{
+         if (tres==3){
+          sete=7;
+          jug1=3;
+         }
+        else{
+         if (cuatro==4){
+          cinco5=5;
+          jug1=4;
+         }
+        else{
+         if (cinco==5){
+          nove=9;
+          jug1=5;
+         }
+        else{
+         if (seis==6){
+          cinco5=5;
+          jug1=6;
+         }
+        else{
+         if (siete==7){
+          três=3;
+          jug1=7;
+         }
+        else{
+         if (ocho == 8){
+          cinco5=5;
+          jug1=8;
+         }
+        else{
+         if (nueve == 9){
+          três=3;
+          jug1=9;
+
+
+         }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+       }
+System.out.println(+dos);
+       if(turno==3){
+
+           if ((tres==3)&&(jug1==2)){
+            nove=9;
+            System.out.println("PERDISTE");
+            JOptionPane.showMessageDialog(null, "PERDISTE");
+            jug2=3;
+           }
+           else{
+            if((cuatro==4)&&(jug1==2)){
+             nove=9;
+             System.out.println("PERDISTE");
+             JOptionPane.showMessageDialog(null, "PERDISTE");
+             jug2=4;
+            }
+           else{
+            if((seis==6)&&(jug1==2)){
+             nove=9;
+             System.out.println("PERDISTE");
+             JOptionPane.showMessageDialog(null, "PERDISTE");
+             jug2=6;
+            }
+           else{
+            if((siete==7)&&(jug1==2)){
+             nove=9;
+             System.out.println("PERDISTE");
+             JOptionPane.showMessageDialog(null, "PERDISTE");
+             jug2=7;
+            }
+           else{
+            if((ocho==8)&&(jug1==2)){
+             nove=9;
+             System.out.println("PERDISTE");
+             JOptionPane.showMessageDialog(null, "PERDISTE");
+             jug2=8;
+            }
+           else{
+            if((nueve==9)&&(jug1==2)){
+             sete=7;
+             jug2=9;
+            }
+            else{
+             if ((dos==2)&&(jug1==3)){
+              quatro=4;
+              System.out.println("PERDISTE");
+              JOptionPane.showMessageDialog(null, "PERDISTE");
+              jug2=2;
+             }
+            else{
+             if ((cinco==5)&&(jug1==3)){
+              quatro=4;
+              System.out.println("PERDISTE");
+              JOptionPane.showMessageDialog(null, "PERDISTE");
+              jug2=5;
+             }
+            else{
+             if ((seis==6)&&(jug1==3)){
+              quatro=4;
+              System.out.println("PERDISTE");
+              JOptionPane.showMessageDialog(null, "PERDISTE");
+              jug2=6;
+             }
+            else{
+             if ((ocho==8)&&(jug1==3)){
+              quatro=4;
+              System.out.println("PERDISTE");
+              JOptionPane.showMessageDialog(null, "PERDISTE");
+              jug2=8;
+             }
+            else{
+             if ((nueve==9)&&(jug1==3)){
+              quatro=4;
+              System.out.println("PERDISTE");
+              JOptionPane.showMessageDialog(null, "PERDISTE");
+              jug2=9;
+             }
+            else{
+             if ((cuatro ==4)&&(jug1==3)){
+              nove=9;
+              jug2=4;
+             }
+
+             else{
+              if ((dos==2)&&(jug1==4)){
+               nove=9;
+               jug2=2;
+               System.out.println("PERDISTE");
+               JOptionPane.showMessageDialog(null, "PERDISTE");
+              }
+             else{
+              if ((tres==3)&&(jug1==4)){
+               nove=9;
+               jug2=3;
+               System.out.println("PERDISTE");
+               JOptionPane.showMessageDialog(null, "PERDISTE");
+              }
+             else{
+              if ((seis==6)&&(jug1==4)){
+               nove=9;
+               jug2=6;
+               System.out.println("PERDISTE");
+               JOptionPane.showMessageDialog(null, "PERDISTE");
+              }
+             else{
+              if ((siete==7)&&(jug1==4)){
+               nove=9;
+               jug2=7;
+               System.out.println("PERDISTE");
+               JOptionPane.showMessageDialog(null, "PERDISTE");
+              }
+             else{
+              if((ocho==8)&&(jug1==4)){
+               nove=9;
+               jug2=8;
+               System.out.println("PERDISTE");
+               JOptionPane.showMessageDialog(null, "PERDISTE");
+              }
+             else{
+              if ((jug1==4)&&(nueve==9)){
+               três=3;
+               jug2=9;
+              }
+              else{
+               if ((jug1==5)&&(dos==2)){
+                oito=8;
+                jug2=2;
+               }
+              else{
+               if ((jug1==5)&&(tres==3)){
+                sete=7;
+                jug2=3;
+               }
+              else{
+               if ((jug1==5)&&(cuatro==4)){
+                seis6=6;
+                jug2=4;
+               }
+              else{
+               if ((jug1==5)&&(seis==6)){
+                quatro=4;
+                jug2=6;
+               }
+              else{
+               if((jug1==5)&&(siete==7)){
+                três=3;
+                jug2=7;
+               }
+              else{
+               if((jug1==5)&&(ocho==8)){
+                dois=2;
+                jug2=8;
+               }
+               else{
+                if ((jug1==6)&&(dos==2)){
+                 nove=9;
+                 jug2=2;
+                 System.out.println("Perdiste!!");
+                 JOptionPane.showMessageDialog(null, "PERDISTE");
+                }
+               else{
+                if ((jug1==6)&&(tres==3)){
+                 nove=9;
+                 jug2=3;
+                 System.out.println("Perdiste!!");
+                 JOptionPane.showMessageDialog(null, "PERDISTE");
+                }
+               else{
+                if ((jug1==6)&&(cuatro==4)){
+                 nove=9;
+                 jug2=4;
+                 System.out.println("Perdiste!!");
+                 JOptionPane.showMessageDialog(null, "PERDISTE");
+                }
+               else{
+                if ((jug1==6)&&(siete==7)){
+                 nove=9;
+                 jug2=7;
+                 System.out.println("Perdiste!!");
+                 JOptionPane.showMessageDialog(null, "PERDISTE");
+                }
+               else{
+                if ((jug1==6)&&(ocho==8)){
+                 nove=9;
+                 jug2=8;
+                 System.out.println("Perdiste!!");
+                 JOptionPane.showMessageDialog(null, "PERDISTE");
+                }
+               else{
+                if((jug1==6)&&(nueve==9)){
+                 três=3;
+                 jug2=9;
+                }
+                else{
+                 if ((jug1==7)&&(cuatro==4)){
+                  dois=2;
+                  jug2=4;
+                  System.out.println ("Gané!!! :D");
+                  JOptionPane.showMessageDialog(null, "Gané!! :D");
+                 }
+                else{
+                 if((jug1==7)&&(cinco==5)){
+                  dois=2;
+                  jug2=5;
+                  System.out.println ("Gané!!! :D");
+                  JOptionPane.showMessageDialog(null, "Gané!! :D");
+                 }
+                else{
+                 if((jug1==7)&&(seis==6)){
+                  dois=2;
+                  jug2=6;
+                  System.out.println ("Gané!!! :D");
+                  JOptionPane.showMessageDialog(null, "Gané!! :D");
+                 }
+                else{
+                 if((jug1==7)&&(ocho==8)){
+                  dois=2;
+                  jug2=8;
+                  System.out.println ("Gané!!! :D");
+                  JOptionPane.showMessageDialog(null, "Gané!! :D");
+                 }
+                else{
+                 if((jug1==7)&&(nueve==9)){
+                  dois=2;
+                  jug2=9;
+                  System.out.println ("Gané!!! :D");
+                  JOptionPane.showMessageDialog(null, "Gané!! :D");
+                 }
+                else{
+                 if ((jug1==7)&&(dos==2)){
+                  nove=9;
+                  jug2=2;
+                 }
+                else{
+                 if ((jug1==8)&&(dos==2)){
+                  nove=9;
+                  jug2=9;
+                  System.out.println("PERDISTE");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if ((jug1==8)&&(tres==3)){
+                  nove=9;
+                  jug2=3;
+                  System.out.println("PERDISTE");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if ((jug1==8)&&(cuatro==4)){
+                  nove=9;
+                  jug2=4;
+                  System.out.println("PERDISTE");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if ((jug1==8)&&(seis==6)){
+                  nove=9;
+                  jug2=6;
+                  System.out.println("PERDISTE");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if ((jug1==8)&&(siete==7)){
+                  nove=9;
+                  jug2=7;
+                  System.out.println("PERDISTE");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if ((jug1==8)&&(nueve ==9)){
+                  sete=7;
+                  jug2=9;
+                 }
+                 else{
+                  if ((jug1==9)&&(cuatro==4)){
+                   dois=2;
+                   jug2=4;
+                   System.out.println("PERDISTE");
+                   JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                  }
+                 else{
+                  if ((jug1==9)&&(cinco==5)){
+                   dois=2;
+                   jug2=5;
+                   System.out.println("PERDISTE");
+                   JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                  }
+                 else{
+                  if ((jug1==9)&&(seis==6)){
+                   dois=2;
+                   jug2=6;
+                   System.out.println("PERDISTE");
+                   JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                  }
+                 else{
+                  if ((jug1==9)&&(siete==7)){
+                   dois=2;
+                   jug2=7;
+                   System.out.println("PERDISTE");
+                   JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                  }
+                 else{
+                  if ((jug1==9)&&(ocho==8)){
+                   dois=2;
+                   jug2=8;
+                   System.out.println("PERDISTE");
+                   JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                  }
+                 else{
+                  if ((jug1==9)&&(dos==2)){
+                   sete=7;
+                   jug2=2;
+                  }
+
+
+           }
+           }
+           }
+           }
+           }
+            }
+            }
+            }
+            }
+            }
+            }
+             }
+             }
+             }
+             }
+             }
+             }
+
+              }
+               }
+              }
+              }
+              }
+              }
+               }
+               }
+               }
+               }
+               }
+               }
+                }
+                }
+                }
+                }
+                }
+                }
+                 }
+                 }
+                 }
+                 }
+                 }
+                 }
+                  }
+                  }
+                  }
+                  }
+                  }
+                  }
+
+
+       }
+       if(turno==5){
+              if((jug1==2)&&(jug2==9)&&(cuatro==4)){
+               três=3;
+               jug3=4;
+               System.out.println("PERDISTE");
+               JOptionPane.showMessageDialog(null, "PERDISTE!!");
+              }
+             else{
+              if((jug1==2)&&(jug2==9)&&(tres==3)){
+               quatro=4;
+               jug3=3;
+               System.out.println("PERDISTE");
+               JOptionPane.showMessageDialog(null, "PERDISTE!!");
+              }
+             else{
+              if((jug1==2)&&(jug2==9)&&(seis==6)){
+               quatro=4;
+               jug3=6;
+               System.out.println("PERDISTE");
+               JOptionPane.showMessageDialog(null, "PERDISTE!!");
+              }
+             else{
+              if((jug1==2)&&(jug2==9)&&(ocho==8)){
+               quatro=4;
+               jug3=8;
+               System.out.println("PERDISTE");
+               JOptionPane.showMessageDialog(null, "PERDISTE!!");
+              }
+              else{
+               if ((jug1==3)&&(jug2==4)&&(dos==2)){
+                oito=8;
+                jug3=8;
+                System.out.println("PERDISTE");
+                JOptionPane.showMessageDialog(null, "PERDISTE!!");
+               }
+              else{
+               if ((jug1==3)&&(jug2==4)&&(cinco==5)){
+                oito=8;
+                jug3=8;
+                System.out.println("PERDISTE");
+                JOptionPane.showMessageDialog(null, "PERDISTE!!");
+               }
+              else{
+               if ((jug1==3)&&(jug2==4)&&(seis==6)){
+                oito=8;
+                jug3=8;
+                System.out.println("PERDISTE");
+                JOptionPane.showMessageDialog(null, "PERDISTE!!");
+               }
+              else{
+               if ((jug1==3)&&(jug2==4)&&(ocho==8)){
+                cinco5=5;
+                jug3=5;
+                System.out.println("PERDISTE");
+                JOptionPane.showMessageDialog(null, "PERDISTE!!");
+               }
+               else{
+                if((seis==6)&&(jug2==9)&&(jug1==4)){
+                 dois=2;
+                 jug3=6;
+                 System.out.println("PERDISTE");
+                 JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                }
+               else{
+                if ((siete==7)&&(jug2==9)&&(jug1==4)){
+                 dois=2;
+                 jug3=7;
+                 System.out.println("PERDISTE");
+                 JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                }
+               else{
+                if ((ocho==8)&&(jug2==9)&&(jug1==4)){
+                 dois=2;
+                 jug3=8;
+                 System.out.println("PERDISTE");
+                 JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                }
+               else{
+                if ((dos==2)&&(jug2==9)&&(jug1==4)){
+                 sete=7;
+                 jug3=2;
+                 System.out.println("PERDISTE");
+                 JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                }
+                else{
+                 if ((jug1==5)&&(jug2==2)&&(tres==3)){
+                  sete=7;
+                  jug3=3;
+                  System.out.println("Perdiste :P");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if ((jug1==5)&&(jug2==2)&&(cuatro==4)){
+                  sete=7;
+                  jug3=4;
+                  System.out.println("Perdiste :P");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if ((jug1==5)&&(jug2==2)&&(seis==6)){
+                  sete=7;
+                  jug3=6;
+                  System.out.println("Perdiste :P");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if ((jug1==5)&&(jug2==2)&&(siete==7)){
+                  três=3;
+                  jug3=7;
+                 }
+                else{
+                 if ((jug1==5)&&(jug2==3)&&(dos==2)){
+                  quatro=4;
+                  jug3=2;
+                  System.out.println("Perdiste!!!! :)");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if ((jug1==5)&&(jug2==3)&&(ocho==8)){
+                  quatro=4;
+                  jug3=8;
+                  System.out.println("Perdiste!!!! :)");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if ((jug1==5)&&(jug2==3)&&(cuatro==4)){
+                  oito=8;
+                  jug3=4;
+                  System.out.println("Perdiste!!!! :)");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if((jug1==5)&&(jug2==3)&&(seis==6)){
+                  oito=8;
+                  jug3=6;
+                  System.out.println("Perdiste!!!! :)");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if((jug1==5)&&(jug2==4)&&(dos==2)){
+                  três=3;
+                  jug3=2;
+                  System.out.println("Perdiste!!!! :)");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if((jug1==5)&&(jug2==4)&&(siete==7)){
+                  três=3;
+                  jug3=7;
+                  System.out.println("Perdiste!!!! :)");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if((jug1==5)&&(jug2==4)&&(ocho==8)){
+                  jug3=8;
+                  três=3;
+                  System.out.println("Perdiste!!!! :)");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if ((jug1==5)&&(jug2==4)&&(tres==3)){
+                  jug3=3;
+                  sete=7;
+                 }
+                else{
+                 if ((jug1==5)&&(jug2==6)&&(dos==2)){
+                  sete=7;
+                  jug3=2;
+                  System.out.println("Perdiste :)");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if ((jug1==5)&&(jug2==6)&&(tres==3)){
+                  sete=7;
+                  jug3=3;
+                  System.out.println("Perdiste :)");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if((jug1==5)&&(jug2==6)&&(ocho==8)){
+                  sete=7;
+                  jug3=8;
+                  System.out.println("Perdiste :)");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if ((jug1==5)&&(jug2==6)&&(siete==7)){
+                  três=3;
+                  jug3=7;
+                 }
+                else{
+                 if ((jug1==5)&&(jug2==7)&&(dos==2)){
+                  seis6=6;
+                  jug3=2;
+                  System.out.println("Perdiste :)");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if ((jug1==5)&&(jug2==7)&&(ocho==8)){
+                  seis6=6;
+                  jug3=8;
+                  System.out.println("Perdiste :)");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if ((jug1==5)&&(jug2==7)&&(cuatro==4)){
+                  dois=2;
+                  jug3=4;
+                  System.out.println("Perdiste!!!! :)");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if((jug1==5)&&(jug2==7)&&(seis==6)){
+                  dois=2;
+                  jug3=6;
+                  System.out.println("Perdiste!!!! :)");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if((jug1==5)&&(jug2==8)&&(cuatro==4)){
+                  três=3;
+                  jug3=4;
+                  System.out.println("Perdiste!!!! :)");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if ((jug1==5)&&(jug2==8)&&(seis==6)){
+                  três=3;
+                  jug3=6;
+                  System.out.println("Perdiste!!!! :)");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if((jug1==5)&&(jug2==8)&&(siete==7)){
+                  três=3;
+                  jug3=7;
+                  System.out.println("Perdiste!!!! :)");
+                  JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                 }
+                else{
+                 if ((jug1==5)&&(jug2==8)&&(tres==3)){
+                  sete=7;
+                  jug3=3;
+                 }
+                 else{
+                  if ((jug1==6)&&(jug2==9)&&(dos==2)){
+                   sete=7;
+                   System.out.println("Perdiste!!! :D");
+                   JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                  }
+                 else{
+                  if ((jug1==6)&&(jug2==9)&&(cuatro==4)){
+                   dois=2;
+                   System.out.println("Gané!!! Yei!!! :D");
+                   JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                  }
+                 else{
+                  if ((jug1==6)&&(jug2==9)&&(siete==7)){
+                   dois=2;
+                   System.out.println("Gané!!! Yei!!! :D");
+                   JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                  }
+                 else{
+                  if((jug1==6)&&(jug2==9)&&(ocho==8)){
+                   dois=2;
+                   System.out.println("Gané!!! Yei!!! :D");
+                   JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                  }
+                  else{
+                   if ((jug1==7)&&(jug2==2)&&(cuatro==4)){
+                    seis6=6;
+                    System.out.println("Perdiste!!! =)");
+                    JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                   }
+                  else{
+                   if ((jug1==7)&&(jug2==2)&&(cinco==5)){
+                    seis6=6;
+                    System.out.println("Perdiste!!! =)");
+                    JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                   }
+                  else{
+                   if ((jug1==7)&&(jug2==2)&&(ocho==8)){
+                    seis6=6;
+                    System.out.println("Perdiste!!! =)");
+                    JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                   }
+                  else{
+                   if ((jug1==7)&&(jug2==2)&&(seis==6)){
+                    cinco5=5;
+                    System.out.println("Perdiste!!! =)");
+                    JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                   }
+                   else{
+                    if ((jug1==8)&&(jug2==9)&&(dos==2)){
+                     quatro=4;
+                     System.out.println("PERDISTE");
+                     JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                    }
+                   else{
+                    if ((jug1==8)&&(jug2==9)&&(tres==3)){
+                     quatro=4;
+                     System.out.println("PERDISTE");
+                     JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                    }
+                   else{
+                    if ((jug1==8)&&(jug2==9)&&(cuatro==4)){
+                     três=3;
+                     System.out.println("PERDISTE");
+                     JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                    }
+                   else{
+                    if ((jug1==8)&&(jug2==9)&&(seis==6)){
+                     três=3;
+                     System.out.println("PERDISTE");
+                     JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                    }
+                    else{
+                     if ((jug1==9)&&(jug2==2)&&(cinco==5)){
+                      quatro=4;
+                      System.out.println("PERDISTE");
+                      JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                     }
+                    else{
+                     if ((jug1==9)&&(jug2==2)&&(seis==6)){
+                      oito=8;
+                      System.out.println("PERDISTE");
+                      JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                     }
+                    else{
+                     if ((jug1==9)&&(jug2==2)&&(ocho==8)){
+                      oito=8;
+                      System.out.println("PERDISTE");
+                      JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                     }
+                    else{
+                     if ((jug1==9)&&(jug2==2)&&(cuatro==4)){
+                      cinco5=5;
+                      System.out.println("PERDISTE");
+                      JOptionPane.showMessageDialog(null, "PERDISTE!!");
+                     }
+
+
+             }
+             }
+             }
+              }
+              }
+              }
+              }
+               }
+               }
+               }
+               }
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                 }
+                 }
+                 }
+                 }
+                  }
+                  }
+                  }
+                  }
+                   }
+                   }
+                   }
+                   }
+                    }
+                    }
+                    }
+                    }
+
+
+        }
+
+       if(turno==7){
+
+             if ((jug1==5)&&(jug2==2)&&(jug3==7)&&(cuatro ==4)){
+              seis6=6;
+              System.out.println("Perdiste! :P");
+              JOptionPane.showMessageDialog(null, "PERDISTE!!");
+             }
+            else{
+             if((jug1==5)&&(jug2==2)&&(jug3==7)&&(seis==6)){
+              quatro=4;
+              System.out.println ("Empate :S");
+              JOptionPane.showMessageDialog(null, "EMPATE :( !!");
+             }
+            else{
+             if ((jug1==5)&&(jug2==4)&&(jug3==3)&&(dos==2)){
+              oito=8;
+              System.out.println("Perdiste!!!! :)");
+              JOptionPane.showMessageDialog(null, "PERDISTE :( !!");
+             }
+            else{
+             if ((jug1==5)&&(jug2==4)&&(jug3==3)&&(ocho==8)){
+              dois=2;
+              System.out.println("Empate :S");
+              JOptionPane.showMessageDialog(null, "EMPATE :( !!");
+             }
+            else{
+             if ((jug1==5)&&(jug2==6)&&(jug3==7)&&(ocho==8)){
+              dois=2;
+              System.out.println("Perdiste :)");
+              JOptionPane.showMessageDialog(null, "PERDISTE :( !!");
+             }
+            else{
+             if ((jug1==5)&&(jug2==6)&&(jug3==7)&&(dos==2)){
+              oito=8;
+              System.out.println("Empate :S");
+              JOptionPane.showMessageDialog(null, "EMPATE :( !!");
+             }
+            else{
+             if ((jug1==5)&&(jug2==8)&&(jug3==3)&&(seis==6)){
+              quatro=4;
+              System.out.println("Perdiste!!!! :)");
+              JOptionPane.showMessageDialog(null, "PERDISTE :( !!");
+             }
+            else{
+             if ((jug1==5)&&(jug2==8)&&(jug3==3)&&(cuatro==4)){
+              seis6=6;
+              System.out.println("Empates, :S");
+              JOptionPane.showMessageDialog(null, "EMPATE :( !!");
+             }
+
+
+            }
+            }
+            }
+            }
+            }
+            }
+            }
+       }
+
+} //paint
+
+} //class
